@@ -1,0 +1,21 @@
+name: my test workflow 
+on:
+  push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Test message
+        run: echo "This is a test workflow running on push event."
+
+      - name: List files
+        run: ls -la
+
+      - name: Show current directory
+        run: pwd
+
+      - name: read file
+        run: cat first.yml
